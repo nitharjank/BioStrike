@@ -29,7 +29,7 @@
                 android:id="@+id/Logo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/nosifer"
+                android:fontFamily="@font/syncopate_bold"
                 android:gravity="center"
                 android:text="BioStrike"
                 android:textSize="50dp" />

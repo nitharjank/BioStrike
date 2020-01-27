@@ -31,22 +31,14 @@ const styles = StyleSheet.create({
 
   },
   container1: {
-    top: -55,
-    right: -325,
+    top: -60,
+    right: -350,
   },
   headline: {
     fontWeight: 'bold',
     fontSize: 30,
   marginTop: -45,
     width: 90,
-  },
-  item1: {
-    flex: 8,
-    flexDirection: 'column-reverse',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    width: 100,
-    paddingLeft: 8
   },
 });
 

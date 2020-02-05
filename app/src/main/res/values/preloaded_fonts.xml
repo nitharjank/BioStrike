@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/aldrich</item>
+        <item>@font/amarante</item>
+        <item>@font/cambo</item>
+        <item>@font/cherry_cream_soda</item>
+        <item>@font/convergence</item>
+        <item>@font/goblin_one</item>
+        <item>@font/graduate</item>
+        <item>@font/lemon</item>
+        <item>@font/michroma</item>
+        <item>@font/new_rocker</item>
+        <item>@font/nosifer</item>
+        <item>@font/quantico_bold_italic</item>
+        <item>@font/rubik_mono_one</item>
+        <item>@font/russo_one</item>
+        <item>@font/syncopate_bold</item>
+    </array>
+</resources>

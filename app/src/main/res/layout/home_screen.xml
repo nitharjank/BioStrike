@@ -33,7 +33,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -58,12 +58,13 @@
 
         >
         <Button
-            android:id="@+id/currentButton"
+            android:id="@+id/pastButton"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
+            style="?android:attr/borderlessButtonStyle"
             android:fontFamily="@font/convergence"
-            android:text="Current"
+            android:text="Past"
             android:textSize="20dp"
             android:textColor="@color/white"
             android:background="@drawable/button_design"
@@ -71,16 +72,16 @@
 
             />
         <Button
-            android:id="@+id/pastButton"
+            android:id="@+id/currentButton"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
             android:fontFamily="@font/convergence"
-            android:text="Past"
+            android:text="Current"
             android:textSize="20dp"
             android:textColor="@color/white"
             android:background="@drawable/button_design"
-            android:layout_toRightOf="@+id/currentButton"
+            android:layout_toRightOf="@+id/pastButton"
 
             />
         <Button
@@ -93,7 +94,7 @@
             android:textSize="20dp"
             android:textColor="@color/white"
             android:background="@drawable/button_design"
-            android:layout_toEndOf="@+id/pastButton"
+            android:layout_toEndOf="@+id/currentButton"
             />
 
         <Button

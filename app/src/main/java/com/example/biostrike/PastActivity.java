@@ -20,5 +20,22 @@ public class PastActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button currButton = (Button) findViewById(R.id.currentButton);
+        currButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), CurrentActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button goalsButton = (Button) findViewById(R.id.goalsButton);
+        goalsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(),GoalsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

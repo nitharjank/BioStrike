@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
@@ -7,11 +8,24 @@
     >
 
     <!-- Main content on the screen-->
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
         >
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/image"
+            android:fontFamily="@font/amarante"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            />
         <LinearLayout
             android:id="@+id/mainContent"
             android:layout_width="wrap_content"
@@ -30,6 +44,7 @@
                 android:textSize="30dp"
 
                 />
+
         </LinearLayout>
 
         <TextView
@@ -46,17 +61,132 @@
             android:layout_marginTop="5dp"
 
             />
+    </RelativeLayout>
+
+    <!-- Actual main content on the screen added by Owen-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/sampleFighter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/samplefighter" />
+
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_below="@id/sampleFighter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/convergence"
+            android:gravity="center"
+            android:text="Jenny Hua"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/profileInfo"
+            android:layout_below="@id/profileName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/convergence"
+            android:text=" Weight: \n Weight Class: \n Next Opponent: \n Date of Fight:"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/profileInfo2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profileName"
+            android:layout_toRightOf="@id/profileInfo"
+            android:gravity="right"
+            android:textAlignment="gravity"
+            android:fontFamily="@font/convergence"
+            android:text="\n 134 lbs \n Bantamweight \n Soha Jiwani \n March 3rd, 2020 "
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+            />
+
+        <TextView
+            android:id="@+id/profileDevices"
+            android:layout_below="@id/profileInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/convergence"
+            android:gravity="center"
+            android:text="Devices"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/deviceInfo"
+            android:layout_below="@id/profileDevices"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/convergence"
+            android:text=" Right Arm: \n Right Leg: \n Left Arm: \n Left Leg:"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/deviceInfo2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profileDevices"
+            android:layout_toRightOf="@id/deviceInfo"
+            android:gravity="right"
+            android:textAlignment="gravity"
+            android:fontFamily="@font/convergence"
+            android:text="\n Disconnected \n Disconnected \n Disconnected \n  Disconnected "
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+        />
+
+        <TextView
+            android:id="@+id/profileGoals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/deviceInfo"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/convergence"
+            android:gravity="center"
+            android:text="Main Goal"
+            android:textColor="@color/white"
+            android:textSize="30dp" />
+
+        <TextView
+            android:id="@+id/goalsInfo"
+            android:layout_below="@id/profileGoals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/convergence"
+            android:text=" Need to improve the force of punch"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
 
 
     </RelativeLayout>
 
     <!-- This layout is for the tabs -->
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="bottom"
 
         >
+
         <Button
             android:id="@+id/pastButton"
             android:layout_width="110dp"

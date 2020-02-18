@@ -12,6 +12,16 @@ public class HomescreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_screen);
 
+        Button homeButton = (Button) findViewById(R.id.homeButton);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), HomescreenActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         Button currButton = (Button) findViewById(R.id.currentButton);
         currButton.setOnClickListener(new View.OnClickListener() {

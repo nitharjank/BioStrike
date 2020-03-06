@@ -44,8 +44,10 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
-                startActivity(intent);
+                if (username.toString() == usernam && password.toString() == passwordd){
+                    Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -89,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        String query = "select * from login where username= '" + usernam.toString() + "' and password = '"+ passwordd.toString() +"' ";
+                        String query = "select * from BioStrike_Table where userName= '" + usernam.toString() + "' and passWord = '"+ passwordd.toString() +"' ";
                         Statement stmt = con.createStatement();
                         ResultSet rs = stmt.executeQuery(query);
                         if(rs.next())
@@ -121,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         String connectionURl = null;
         try {
             Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            connectionURl = "jdbc:sqlserver://advancingtechnoloiges1.database.windows.net:1433;database=ATLETECHS DATABASE;user=ralphonse@advancingtechnoloiges1;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+            connectionURl = "jdbc:sqlserver://atletechsbiostrike2.database.windows.net:1433;database=BioStrike;user=nitharjan@atletechsbiostrike2;password={Tharshan2020};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
             connection = DriverManager.getConnection(connectionURl);
         }
         catch (SQLException se) {

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: mssql-jdbc-8.2.0.jre13.mssql-jdbc-8.2.0.jre13">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mssql-jdbc-8.2.0.jre13/mssql-jdbc-8.2.0.jre13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -19,6 +19,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import net.sourceforge.jtds.jdbc.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Connection con;
     String un,pass,db,ip;
     String usernam,passwordd;
+    Boolean finalLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,12 +41,17 @@ public class MainActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.passwordField);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setVisibility(View.GONE);
-
+        finalLogin = false;
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (username.toString() == usernam && password.toString() == passwordd){
+                usernam = username.getText().toString();
+                passwordd = password.getText().toString();
+                CheckLogin checkLogin = new CheckLogin();// this is the Asynctask, which is used to process in background to reduce load on app process
+                checkLogin.execute("");
+                String x= ""+v.getId();
+                if (finalLogin){
                     Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
                     startActivity(intent);
                 }
@@ -52,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public class checkLogin extends AsyncTask<String, String, String>{
+    public class CheckLogin extends AsyncTask<String, String, String>{
         String z = "";
         Boolean isSuccess = false;
 
@@ -70,8 +77,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, r, Toast.LENGTH_SHORT).show();
             if(isSuccess)
             {
-                Toast.makeText(MainActivity.this , "Login Successfull" , Toast.LENGTH_LONG).show();
-                //finish();
+                finalLogin = true;
+                Intent intent = new Intent(MainActivity.this,HomescreenActivity.class);
+                startActivity(intent);
             }
         }
         @Override
@@ -98,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                         {
                             z = "Login successful";
                             isSuccess=true;
+                            finalLogin = true;
                             con.close();
                         }
                         else
@@ -117,23 +126,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public Connection connectionclass(String user, String password, String database, String server){
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        String _user = "nitharjan@atletechsbiostrike2";
+        String _pass = "Tharshan2020";
+        String _DB = "BioStrike";
+        String _server = "atletechsbiostrike2.database.windows.net:1433";
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                .permitAll().build();
         StrictMode.setThreadPolicy(policy);
         Connection connection = null;
-        String connectionURl = null;
+        String ConnURL = null;
         try {
             Class.forName("net.sourceforge.jtds.jdbc.Driver");
-            connectionURl = "jdbc:sqlserver://atletechsbiostrike2.database.windows.net:1433;database=BioStrike;user=nitharjan@atletechsbiostrike2;password={Tharshan2020};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
-            connection = DriverManager.getConnection(connectionURl);
-        }
-        catch (SQLException se) {
-            Log.e("error here 1" , se.getMessage());
-        }
-        catch (ClassNotFoundException e) {
-            Log.e("error here 1" , e.getMessage());
-        }
-        catch (Exception e) {
-            Log.e("error here 1" , e.getMessage());
+            ConnURL = "jdbc:jtds:sqlserver://" + _server + ";"
+                    + "databaseName=" + _DB + ";user=" + _user + ";password="
+                    + _pass + ";";
+            connection = DriverManager.getConnection(ConnURL);
+        } catch (SQLException se) {
+            Log.e("ERRO", se.getMessage());
+        } catch (ClassNotFoundException e) {
+            Log.e("ERRO", e.getMessage());
+        } catch (Exception e) {
+            Log.e("ERRO", e.getMessage());
         }
         return connection;
     }

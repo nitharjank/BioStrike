@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".HomescreenActivity"/>
         <activity android:name=".CurrentActivity"/>
+        <activity android:name=".RegistrationActivity"/>
         <activity android:name=".PastActivity"/>
         <activity android:name=".GoalsActivity"/>
 

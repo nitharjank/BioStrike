@@ -20,6 +20,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import net.sourceforge.jtds.jdbc.*;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     String un,pass,db,ip;
     String usernam,passwordd;
     Boolean finalLogin;
+
+    TextView registerLink;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setVisibility(View.GONE);
         finalLogin = false;
+        registerLink = (TextView)findViewById(R.id.NewUser);
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
                     startActivity(intent);
                 }
+            }
+        });
+        registerLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), RegistrationActivity.class));
             }
         });
     }

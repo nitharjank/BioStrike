@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     EditText username,password;
     ProgressBar progressBar;
 
-    Connection con;
+    ConnectionClass con;
     String un,pass,db,ip;
     String usernam,passwordd;
     Boolean finalLogin;
@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar.setVisibility(View.GONE);
         finalLogin = false;
         registerLink = (TextView)findViewById(R.id.NewUser);
+
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(v.getContext(), RegistrationActivity.class));
             }
         });
+
     }
 
     public class CheckLogin extends AsyncTask<String, String, String>{
@@ -102,22 +104,24 @@ public class MainActivity extends AppCompatActivity {
             {
                 try
                 {
-                    con = connectionclass(un, pass, db, ip);        // Connect to database
-                    if (con == null)
+
+                    con = new ConnectionClass();// Connect to database
+                    Connection connect = ConnectionClass.CONN();
+                    if (connect == null)
                     {
                         z = "Check Your Internet Access!";
                     }
                     else
                     {
                         String query = "select * from BioStrike_Table where userName= '" + usernam.toString() + "' and passWord = '"+ passwordd.toString() +"' ";
-                        Statement stmt = con.createStatement();
+                        Statement stmt = connect.createStatement();
                         ResultSet rs = stmt.executeQuery(query);
                         if(rs.next())
                         {
                             z = "Login successful";
                             isSuccess=true;
                             finalLogin = true;
-                            con.close();
+                            //con.close();
                         }
                         else
                         {

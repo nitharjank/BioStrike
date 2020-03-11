@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        String query = "select * from BioStrike_Table where userName= '" + usernam.toString() + "' and passWord = '"+ passwordd.toString() +"' ";
+                        String query = "select * from BioStrike_Table2 where userName= '" + usernam.toString() + "' and passWord = '"+ passwordd.toString() +"' ";
                         Statement stmt = connect.createStatement();
                         ResultSet rs = stmt.executeQuery(query);
                         if(rs.next())

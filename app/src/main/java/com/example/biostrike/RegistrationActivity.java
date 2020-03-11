@@ -60,10 +60,15 @@ public class RegistrationActivity extends AppCompatActivity {
                     registerUser newuser = new registerUser();
                     newuser.execute("");
                 }
-//                Intent intent = new Intent(v.getContext(),MainActivity.class);
-//                startActivity(intent);
             }
         });
+    }
+
+    public Boolean isEmpty(String strValue) {
+        if (strValue == null || strValue.trim().equals(("")))
+            return true;
+        else
+            return false;
     }
 
     public class registerUser extends AsyncTask<String, Void, String>{
@@ -86,17 +91,7 @@ public class RegistrationActivity extends AppCompatActivity {
             try {
                 ConnectionClass con = new ConnectionClass();
                 Connection connect = ConnectionClass.CONN();
-
-//                String queryStmt = "Insert into BioStrike_Table  (firstName,lastName,userName,passWord,phoneNumber,email) values "
-//                        + "('" + _fName
-//                        + "','" + _lName
-//                        + "','"+_uName
-//                        + "','" + _passWord
-//                        + "','"+mPhone
-//                        + "','"+_email
-//                        +"')";
-
-                String queryStmt = "Insert into BioStrike_Table values "
+                String queryStmt = "Insert into BioStrike_Table2 values "
                         + "('" + _fName
                         + "','" + _lName
                         + "','"+_uName
@@ -123,11 +118,11 @@ public class RegistrationActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String result) {
-
+            Toast.makeText(RegistrationActivity.this, result, Toast.LENGTH_SHORT).show();
             progressBar.setVisibility(View.GONE);
             if (result.equals("Registered successfully")) {
-                //Intent intent = new Intent(RegistrationActivity.this,MainActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(RegistrationActivity.this,MainActivity.class);
+                startActivity(intent);
             }
         }
     }

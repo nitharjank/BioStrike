@@ -6,20 +6,22 @@
     android:layout_gravity="center"
     >
 
+    <LinearLayout
+        android:id="@+id/currentScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+        >
+    </LinearLayout>
+
+
     <!-- Main content on the screen-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
 
         >
-        <LinearLayout
-            android:id="@+id/currentScreen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_alignParentRight="true"
-            >
-        </LinearLayout>
 
         <TextView
             android:id="@+id/past"
@@ -35,6 +37,12 @@
             android:textSize="30dp"
 
             />
+
+
+        <com.jjoe64.graphview.GraphView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/graph" />
 
 
     </RelativeLayout>
@@ -100,15 +108,4 @@
             />
     </RelativeLayout>
 
-    <!-- User Profile-->
-
-    <!-- For hamburger button will implement later-->
-    <RelativeLayout
-        android:layout_width="280dp"
-        android:layout_height="match_parent"
-        android:id="@+id/drawerPane"
-        android:layout_gravity="start">
-
-
-    </RelativeLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

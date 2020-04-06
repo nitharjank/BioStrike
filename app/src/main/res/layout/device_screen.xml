@@ -173,7 +173,7 @@
             >
             <Spinner
                 android:id="@+id/device1"
-                android:layout_width="200dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:entries="@array/Device_items"
@@ -182,7 +182,7 @@
 
             <Spinner
                 android:id="@+id/device2"
-                android:layout_width="200dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:entries="@array/Device_items"
@@ -190,7 +190,7 @@
 
             <Spinner
                 android:id="@+id/device3"
-                android:layout_width="200dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:entries="@array/Device_items"
@@ -198,7 +198,7 @@
 
             <Spinner
                 android:id="@+id/device4"
-                android:layout_width="200dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:entries="@array/Device_items"
@@ -212,8 +212,8 @@
     <LinearLayout
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="600dp"
-        android:layout_marginBottom="75dp"
+        android:layout_marginTop="550dp"
+        android:layout_marginBottom="125dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         >
@@ -231,6 +231,95 @@
             android:layout_toEndOf="@+id/currentButton"
 
             />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="300dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/connected"
+                android:layout_marginTop="15dp"
+                >
+            </ImageView>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/connected"
+                android:layout_marginTop="35dp"
+                >
+            </ImageView>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/connected"
+                android:layout_marginTop="35dp"
+                >
+            </ImageView>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/connected"
+                android:layout_marginTop="35dp"
+                >
+            </ImageView>
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        >
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/full"
+            android:layout_marginTop="15dp"
+            >
+        </ImageView>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/morethanhalf"
+            android:layout_marginTop="35dp"
+            >
+        </ImageView>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/half"
+            android:layout_marginTop="35dp"
+            >
+        </ImageView>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/full"
+            android:layout_marginTop="35dp"
+            >
+        </ImageView>
+
+    </LinearLayout>
+
+
     </LinearLayout>
 
 

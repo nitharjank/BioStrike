@@ -53,13 +53,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 usernam = username.getText().toString();
                 passwordd = password.getText().toString();
-                CheckLogin checkLogin = new CheckLogin();// this is the Asynctask, which is used to process in background to reduce load on app process
-                checkLogin.execute("");
-                String x= ""+v.getId();
-                if (finalLogin){
+                Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
+                startActivity(intent);
+                //CheckLogin checkLogin = new CheckLogin();// this is the Asynctask, which is used to process in background to reduce load on app process
+                //checkLogin.execute("");
+                //String x= ""+v.getId();
+                /*if (finalLogin){
                     Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
                     startActivity(intent);
-                }
+                }*/
             }
         });
         registerLink.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public class CheckLogin extends AsyncTask<String, String, String>{
+    /*public class CheckLogin extends AsyncTask<String, String, String>{
         String z = "";
         Boolean isSuccess = false;
 
@@ -163,5 +165,5 @@ public class MainActivity extends AppCompatActivity {
             Log.e("ERRO", e.getMessage());
         }
         return connection;
-    }
+    }*/
 }

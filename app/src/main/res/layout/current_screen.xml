@@ -36,6 +36,51 @@
 
             />
 
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/past"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="70dp"
+            android:text=" TIMER: 00:00:00"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"/>
+        <Button
+            android:text="Start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="21dp"
+            android:id="@+id/startbutton" />
+        <Button
+            android:text="Pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pausebutton"
+            android:layout_alignBaseline="@+id/button"
+            android:layout_alignBottom="@+id/startbutton"
+            android:layout_centerHorizontal="true" />
+        <Button
+            android:text="Reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/pausebutton"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/resetbutton" />
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/currentsession" />
 
     </RelativeLayout>
 
@@ -112,112 +157,3 @@
 
     </RelativeLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:background="@drawable/background"-->
-<!--    >-->
-
-<!--    <Button-->
-<!--        android:id="@+id/homeButton"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:background="@drawable/image"-->
-<!--        android:fontFamily="@font/amarante"-->
-<!--        android:text=""-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="30dp"-->
-<!--        android:layout_alignParentLeft="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        />-->
-
-<!--    <RelativeLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:gravity="center_horizontal"-->
-<!--        >-->
-
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-
-<!--            >-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/currentScreen"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_alignParentTop="true"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                android:layout_weight="1"-->
-<!--                android:fontFamily="@font/convergence"-->
-<!--                android:text="Current"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="30dp" />-->
-<!--        </LinearLayout>-->
-
-<!--    </RelativeLayout>-->
-
-<!--    &lt;!&ndash; This layout is for the tabs &ndash;&gt;-->
-<!--    <RelativeLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:gravity="bottom"-->
-
-<!--        >-->
-<!--        <Button-->
-<!--            android:id="@+id/currentButton"-->
-<!--            android:layout_width="110dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="0.25"-->
-<!--            style="?android:attr/borderlessButtonStyle"-->
-<!--            android:fontFamily="@font/convergence"-->
-<!--            android:text="Current"-->
-<!--            android:textSize="20dp"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:background="@drawable/button_design"-->
-<!--            android:layout_alignParentLeft="true"-->
-
-<!--            />-->
-<!--        <Button-->
-<!--            android:id="@+id/pastButton"-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="0.25"-->
-<!--            android:fontFamily="@font/convergence"-->
-<!--            android:text="Past"-->
-<!--            android:textSize="20dp"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:background="@drawable/button_design"-->
-<!--            android:layout_toRightOf="@+id/currentButton"-->
-
-<!--            />-->
-<!--        <Button-->
-<!--            android:id="@+id/goalsButton"-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="0.25"-->
-<!--            android:fontFamily="@font/convergence"-->
-<!--            android:text="Goals"-->
-<!--            android:textSize="20dp"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:background="@drawable/button_design"-->
-<!--            android:layout_toEndOf="@+id/pastButton"-->
-<!--            />-->
-
-<!--        <Button-->
-<!--            android:id="@+id/deviceButton"-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="0.25"-->
-<!--            android:fontFamily="@font/convergence"-->
-<!--            android:text="Devices"-->
-<!--            android:textSize="20dp"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:background="@drawable/button_design"-->
-<!--            android:layout_toEndOf="@+id/goalsButton"-->
-<!--            />-->
-<!--    </RelativeLayout>-->
-
-<!--</RelativeLayout>-->

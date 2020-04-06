@@ -56,10 +56,12 @@ public class MainActivity extends AppCompatActivity {
                 CheckLogin checkLogin = new CheckLogin();// this is the Asynctask, which is used to process in background to reduce load on app process
                 checkLogin.execute("");
                 String x= ""+v.getId();
-                if (finalLogin){
-                    Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
-                    startActivity(intent);
-                }
+//                if (finalLogin){
+//                    Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
+//                    startActivity(intent);
+//                }
+                Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
+                startActivity(intent);
             }
         });
         registerLink.setOnClickListener(new View.OnClickListener() {

@@ -38,5 +38,14 @@ public class CurrentActivity extends AppCompatActivity {
             }
         });
 
+        Button deviceButton = (Button) findViewById(R.id.deviceButton);
+        deviceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), DeviceActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

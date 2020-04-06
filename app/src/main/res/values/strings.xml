@@ -3,4 +3,10 @@
     <string name="login">Login</string>
     <string name="loginButton">Login</string>
     <string name="back"><![CDATA[<]]></string>
+    <string-array name="Device_items">
+        <item>DEVICEID1</item>
+        <item>DEVICEID2</item>
+        <item>DEVICEID3</item>
+        <item>DEVICEID4</item>
+    </string-array>
 </resources>

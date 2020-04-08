@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /*public class CheckLogin extends AsyncTask<String, String, String>{
+    public class CheckLogin extends AsyncTask<String, String, String>{
         String z = "";
         Boolean isSuccess = false;
 
@@ -165,5 +165,5 @@ public class MainActivity extends AppCompatActivity {
             Log.e("ERRO", e.getMessage());
         }
         return connection;
-    }*/
+    }
 }

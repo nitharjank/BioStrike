@@ -44,7 +44,7 @@ public class GoalsActivity extends AppCompatActivity {
         temp = new ArrayList<>();
         temp.add("Need to improve the force of punch");
         temp.add("Need to improve speed of the punch");
-        temp.add("Have to talk to my couch tomorrow");
+        temp.add("Have to talk to my coach tomorrow");
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_multiple_choice, temp);
 
         View.OnClickListener addList = new View.OnClickListener() {

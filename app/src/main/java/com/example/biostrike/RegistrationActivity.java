@@ -57,8 +57,8 @@ public class RegistrationActivity extends AppCompatActivity {
                     String me = "Please enter all fields";
                     Toast.makeText(RegistrationActivity.this, me, Toast.LENGTH_LONG).show();
                 } else {
-                    //registerUser newuser = new registerUser();
-                    //newuser.execute("");
+                    registerUser newuser = new registerUser();
+                    newuser.execute("");
                     Intent intent = new Intent(RegistrationActivity.this,MainActivity.class);
                     startActivity(intent);
                 }
@@ -66,14 +66,14 @@ public class RegistrationActivity extends AppCompatActivity {
         });
     }
 
-    /*public Boolean isEmpty(String strValue) {
+    public Boolean isEmpty(String strValue) {
         if (strValue == null || strValue.trim().equals(("")))
             return true;
         else
             return false;
-    }*/
+    }
 
-    /*public class registerUser extends AsyncTask<String, Void, String>{
+    public class registerUser extends AsyncTask<String, Void, String>{
         String _fName, _lName, _uName, _email, _mPhone, _passWord;
 
         @Override
@@ -93,7 +93,7 @@ public class RegistrationActivity extends AppCompatActivity {
             try {
                 ConnectionClass con = new ConnectionClass();
                 Connection connect = ConnectionClass.CONN();
-                String queryStmt = "Insert into BioStrike_Table2 values "
+                String queryStmt = "Insert into BioStrike_Table values "
                         + "('" + _fName
                         + "','" + _lName
                         + "','"+_uName
@@ -127,5 +127,5 @@ public class RegistrationActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         }
-    }*/
+    }
 }

@@ -56,12 +56,12 @@ public class MainActivity extends AppCompatActivity {
                 CheckLogin checkLogin = new CheckLogin();// this is the Asynctask, which is used to process in background to reduce load on app process
                 checkLogin.execute("");
                 String x= ""+v.getId();
-//                if (finalLogin){
-//                    Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
-//                    startActivity(intent);
-//                }
-                Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
-                startActivity(intent);
+                if (finalLogin){
+                    Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
+                    startActivity(intent);
+                }
+//                Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
+//                startActivity(intent);
             }
         });
         registerLink.setOnClickListener(new View.OnClickListener() {
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else
                     {
-                        String query = "select * from BioStrike_Table2 where userName= '" + usernam.toString() + "' and passWord = '"+ passwordd.toString() +"' ";
+                        String query = "select * from BioStrike_Table where userName= '" + usernam.toString() + "' and passWord = '"+ passwordd.toString() +"' ";
                         Statement stmt = connect.createStatement();
                         ResultSet rs = stmt.executeQuery(query);
                         if(rs.next())
@@ -142,10 +142,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public Connection connectionclass(String user, String password, String database, String server){
-        String _user = "nitharjan@atletechsbiostrike2";
-        String _pass = "Tharshan2020";
-        String _DB = "BioStrike";
-        String _server = "atletechsbiostrike2.database.windows.net:1433";
+        String _user = "ralphonse@advancingtechnoloiges1";
+        String _pass = "Bio-Strike";
+        String _DB = "ATLETECHS DATABASE";
+        String _server = "advancingtechnoloiges1.database.windows.net:1433";
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
                 .permitAll().build();
         StrictMode.setThreadPolicy(policy);

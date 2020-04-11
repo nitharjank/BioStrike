@@ -12,10 +12,10 @@ public class ConnectionClass {
     @SuppressLint("NewApi")
     public static Connection CONN() {
 
-        String _user = "nitharjan@atletechsbiostrike2";
-        String _pass = "Tharshan2020";
-        String _DB = "BioStrike";
-        String _server = "atletechsbiostrike2.database.windows.net:1433";
+        String _user = "ralphonse@advancingtechnoloiges1";
+        String _pass = "Bio-Strike";
+        String _DB = "ATLETECHS DATABASE";
+        String _server = "advancingtechnoloiges1.database.windows.net:1433";
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
                 .permitAll().build();
         StrictMode.setThreadPolicy(policy);

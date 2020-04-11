@@ -20,7 +20,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         >
 
         <TextView
@@ -38,12 +37,23 @@
 
             />
 
+        <TextView
+            android:id="@+id/graphTitle"
+            android:layout_below="@id/past"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/convergence"
+            android:text="Left Hand Strike Data (session ID vs. strike data)"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
 
         <com.jjoe64.graphview.GraphView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:layout_below="@id/graphTitle"
             android:id="@+id/graph" />
-
 
     </RelativeLayout>
 

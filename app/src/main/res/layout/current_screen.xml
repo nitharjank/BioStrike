@@ -80,12 +80,47 @@
             android:layout_width="237dp"
             android:layout_height="407dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="230dp"
+            android:layout_marginTop="180dp"
             android:adjustViewBounds="true"
             android:cropToPadding="false"
             android:scaleType="fitXY"
-            android:src="@drawable/currentsession"
             app:srcCompat="@drawable/human_body" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="420dp"
+            android:layout_toLeftOf="@id/imageView1"
+            android:textSize="28sp"
+            android:text="12"/>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="420dp"
+            android:layout_toRightOf="@id/imageView1"
+            android:textSize="28sp"
+            android:text="44"/>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="520dp"
+            android:layout_toRightOf="@id/imageView1"
+            android:textSize="28sp"
+            android:text="34"/>
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="520dp"
+            android:layout_toLeftOf="@id/imageView1"
+            android:textSize="28sp"
+            android:text="28"/>
+
+
 
     </RelativeLayout>
 

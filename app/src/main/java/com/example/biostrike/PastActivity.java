@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
@@ -28,20 +31,68 @@ public class PastActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.past_screen);
 
+        // spinner for selecting body part
+        final Spinner dataSpinner = (Spinner) findViewById(R.id.pastProgSpinner);
+        ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(PastActivity.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.Parts));
+        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataSpinner.setAdapter(spinnerAdapter);
+        String selectedValue = dataSpinner.getSelectedItem().toString();
+
+        // take data from csv file and put into dataSamples ArrayList
         readPastSessionData();
 
+        // graph data
         int y, x;
         x = 0;
-        GraphView graph = (GraphView) findViewById(R.id.graph);
+        final GraphView graph = (GraphView) findViewById(R.id.graph);
         series = new LineGraphSeries<DataPoint>();
-        System.out.println(dataSamples.size());
         for (int i = 0; i < dataSamples.size(); i++) {
             x = dataSamples.get(i).getSessionID();
-            y = dataSamples.get(i).getLeftHandStrike();
+            if (selectedValue.equals("Left Leg")) {
+                y = dataSamples.get(i).getLeftLegStrike();
+            } else if (selectedValue.equals("Right Leg")) {
+                y = dataSamples.get(i).getRightLegStrike();
+            } else if (selectedValue.equals("Right Hand")) {
+                y = dataSamples.get(i).getRightHandStrike();
+            } else {
+                y = dataSamples.get(i).getLeftHandStrike();
+            }
             series.appendData(new DataPoint(x, y), true, dataSamples.size());
         }
         graph.addSeries(series);
+        // update graph data based on what was selected to be shown
+        dataSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view,
+                                       int position, long id) {
+                graph.removeAllSeries();
+                int y, x;
+                String selectedValue = dataSpinner.getSelectedItem().toString();
+                series = new LineGraphSeries<DataPoint>();
+                for (int i = 0; i < dataSamples.size(); i++) {
+                    x = dataSamples.get(i).getSessionID();
+                    if (selectedValue.equals("Left Leg")) {
+                        y = dataSamples.get(i).getLeftLegStrike();
+                    } else if (selectedValue.equals("Right Leg")) {
+                        y = dataSamples.get(i).getRightLegStrike();
+                    } else if (selectedValue.equals("Right Hand")) {
+                        y = dataSamples.get(i).getRightHandStrike();
+                    } else {
+                        y = dataSamples.get(i).getLeftHandStrike();
+                    }
+                    series.appendData(new DataPoint(x, y), true, dataSamples.size());
+                }
+                graph.addSeries(series);
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        // bottom bar buttons
         Button homeButton = (Button) findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override

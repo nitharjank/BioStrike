@@ -3,6 +3,7 @@ package com.example.biostrike;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,7 +41,7 @@ public class RegistrationActivity extends AppCompatActivity {
         lName = findViewById(R.id.Lname);
         uName = findViewById(R.id.username);
         email = findViewById(R.id.email);
-        mPhone = findViewById(R.id.phone);
+        mPhone = (EditText) findViewById(R.id.phone_number);
         passWord = findViewById(R.id.password);
         progressBar = findViewById(R.id.progressBar2);
 
@@ -98,7 +99,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         + "','" + _lName
                         + "','"+_uName
                         + "','" + _passWord
-                        + "','"+mPhone
+                        + "','"+_mPhone
                         + "','"+_email
                         +"')";
 

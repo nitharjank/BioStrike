@@ -13,6 +13,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class GoalsActivity extends AppCompatActivity {
@@ -23,10 +28,29 @@ public class GoalsActivity extends AppCompatActivity {
     TextView textView;
     ListView list;
     Button addButton;
+
+//    @Override
+//    protected void onStart() {
+//
+//        super.onStart();
+//        ConnectionClass con = new ConnectionClass();
+//        Connection connect = ConnectionClass.CONN();
+//        try {
+//            Statement stmt = connect.createStatement();
+//            ResultSet rs;
+//            rs = stmt.executeQuery("SELECT goal FROM BioStrike_Table WHERE userName = " + MainActivity.user_name);
+//            Log.d("Name", "I am here");
+//            while (rs.next()) {
+//                temp.add(rs.getString("goal"));
+//            }
+//        } catch (Exception e) {
+//            System.out.println(e.getMessage());
+//        }
+//    }
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.goals_screen);
-
 
         Button homeButton = (Button) findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +66,25 @@ public class GoalsActivity extends AppCompatActivity {
         addButton = (Button) findViewById(R.id.addButton);
         list = (ListView) findViewById(R.id.menu);
         temp = new ArrayList<>();
+//        new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                ConnectionClass con = new ConnectionClass();
+//                Connection connect = ConnectionClass.CONN();
+//                try {
+//                    Statement stmt = connect.createStatement();
+//                    ResultSet rs;
+//                    rs = stmt.executeQuery("SELECT goal FROM BioStrike_Table WHERE userName = "+MainActivity.user_name);
+//                    Log.d("Name", "I am here");
+//                    while (rs.next()){
+//                        temp.add(rs.getString("goal"));
+//                    }
+//                } catch (Exception e) {
+//                    System.out.println(e.getMessage());
+//                }
+//
+//                    }
+//        }).start();
         temp.add("Need to improve the force of punch");
         temp.add("Need to improve speed of the punch");
         temp.add("Have to talk to my coach tomorrow");
@@ -51,6 +94,28 @@ public class GoalsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 temp.add(textView.getText().toString());
+                String goal = textView.getText().toString();
+                String user = MainActivity.user_name;
+                try {
+                    ConnectionClass con = new ConnectionClass();
+                    Connection connect = ConnectionClass.CONN();
+                    String queryStmt = "Insert into BioStrike_Goal values "
+                            + "('" + user
+                            + "','" + goal
+                            +"')";
+
+                    PreparedStatement preparedStatement = connect
+                            .prepareStatement(queryStmt);
+
+                    preparedStatement.executeUpdate();
+
+                    preparedStatement.close();
+
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    System.out.println("Exception. Please check your code and database.");
+                }
                 adapter.notifyDataSetChanged();
                 textView.setText("");
             }
@@ -71,8 +136,6 @@ public class GoalsActivity extends AppCompatActivity {
                 }
 
                 pos.clear();
-
-
                 return false;
             }
         });

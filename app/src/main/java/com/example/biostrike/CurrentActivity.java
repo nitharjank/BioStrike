@@ -43,16 +43,16 @@ public class CurrentActivity extends AppCompatActivity {
         image = (ImageView) findViewById(R.id.imageView1);
 
         lefthand = (TextView)findViewById(R.id.textView);
-        lefthand.setText("12");
+        lefthand.setText("12 hits");
         leftleg = (TextView)findViewById(R.id.textView4);
-        leftleg.setText("28");
+        leftleg.setText("28 hits");
         left = (TextView)findViewById(R.id.textView5);
         left.setText("Left");
 
         righthand = (TextView)findViewById(R.id.textView2);
-        righthand.setText("44");
+        righthand.setText("44 hits");
         rightleg = (TextView)findViewById(R.id.textView3);
-        rightleg.setText("34");
+        rightleg.setText("34 hits");
         left = (TextView)findViewById(R.id.textView6);
         left.setText("Right");
 

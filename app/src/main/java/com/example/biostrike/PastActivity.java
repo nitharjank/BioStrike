@@ -47,33 +47,6 @@ public class PastActivity extends AppCompatActivity {
         int y, x;
         x = 0;
         final GraphView graph = (GraphView) findViewById(R.id.graph);
-        series = new LineGraphSeries<DataPoint>();
-        for (int i = 0; i < dataSamples.size(); i++) {
-            String date = dataSamples.get(i).getSessionDate();
-            int k = 0;
-            while (!date.substring(k, k+1).equals("/")) {
-                k++;
-            }
-            int month = Integer.parseInt(date.substring(0,k));
-            k++;
-            int j = k;
-            while (!date.substring(j, j+1).equals("/")) {
-                j++;
-            }
-            int day = Integer.parseInt(date.substring(k, j));
-            x = (31 * month) - 31 + day;
-            if (selectedValue.equals("Left Leg")) {
-                y = dataSamples.get(i).getLeftLegStrike();
-            } else if (selectedValue.equals("Right Leg")) {
-                y = dataSamples.get(i).getRightLegStrike();
-            } else if (selectedValue.equals("Right Hand")) {
-                y = dataSamples.get(i).getRightHandStrike();
-            } else {
-                y = dataSamples.get(i).getLeftHandStrike();
-            }
-            series.appendData(new DataPoint(x, y), true, dataSamples.size());
-        }
-        graph.addSeries(series);
 
         graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter()
         {
@@ -85,10 +58,28 @@ public class PastActivity extends AppCompatActivity {
                             value = 1.0;
                         }
                         return "JAN " + Integer.toString((int) value);
-                    } else if (value < 63) {
+                    } else if (value < 61) {
                         return "FEB " + Integer.toString(((int)value) - 31);
-                    } else if (value < 94) {
-                        return "MAR " + Integer.toString(((int)value) - 62);
+                    } else if (value < 92) {
+                        return "MAR " + Integer.toString(((int)value) - 60);
+                    } else if (value < 122) {
+                        return "APR " + Integer.toString(((int)value) - 91);
+                    } else if (value < 153) {
+                        return "MAY " + Integer.toString(((int)value) - 121);
+                    } else if (value < 183) {
+                        return "JUN " + Integer.toString(((int)value) - 152);
+                    } else if (value < 214) {
+                        return "JUL " + Integer.toString(((int)value) - 182);
+                    } else if (value < 245) {
+                        return "AUG " + Integer.toString(((int)value) - 213);
+                    } else if (value < 275) {
+                        return "SEP " + Integer.toString(((int)value) - 244);
+                    } else if (value < 306) {
+                        return "OCT " + Integer.toString(((int)value) - 274);
+                    } else if (value < 336) {
+                        return "NOV " + Integer.toString(((int)value) - 305);
+                    } else if (value < 367) {
+                        return "DEC " + Integer.toString(((int)value) - 335);
                     } else {
                         return super.formatLabel(value, isValueX);
                     }
@@ -120,7 +111,46 @@ public class PastActivity extends AppCompatActivity {
                         j++;
                     }
                     int day = Integer.parseInt(date.substring(k, j));
-                    x = (31 * month) - 31 + day;
+                    switch (month) {
+                        case 1:
+                            x = day;
+                            break;
+                        case 2:
+                            x = day + 31;
+                            break;
+                        case 3:
+                            x = day + 60;
+                            break;
+                        case 4:
+                            x = day + 91;
+                            break;
+                        case 5:
+                            x = day + 121;
+                            break;
+                        case 6:
+                            x = day + 152;
+                            break;
+                        case 7:
+                            x = day + 182;
+                            break;
+                        case 8:
+                            x = day + 213;
+                            break;
+                        case 9:
+                            x = day + 244;
+                            break;
+                        case 10:
+                            x = day + 274;
+                            break;
+                        case 11:
+                            x = day + 305;
+                            break;
+                        case 12:
+                            x = day + 335;
+                            break;
+                        default:
+                            x = 0;
+                    }
                     if (selectedValue.equals("Left Leg")) {
                         y = dataSamples.get(i).getLeftLegStrike();
                     } else if (selectedValue.equals("Right Leg")) {

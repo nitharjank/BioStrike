@@ -21,6 +21,8 @@ public class CurrentActivity extends AppCompatActivity {
     TextView righthand ;
     TextView leftleg ;
     TextView rightleg ;
+    TextView left;
+    TextView right;
     Button start, pause, reset;
     Handler handler;
     int Seconds, Minutes, MilliSeconds ;
@@ -44,11 +46,15 @@ public class CurrentActivity extends AppCompatActivity {
         lefthand.setText("12");
         leftleg = (TextView)findViewById(R.id.textView4);
         leftleg.setText("28");
+        left = (TextView)findViewById(R.id.textView5);
+        left.setText("Left");
 
         righthand = (TextView)findViewById(R.id.textView2);
         righthand.setText("44");
         rightleg = (TextView)findViewById(R.id.textView3);
         rightleg.setText("34");
+        left = (TextView)findViewById(R.id.textView6);
+        left.setText("Right");
 
 
 

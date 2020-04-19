@@ -2,7 +2,7 @@ package com.example.biostrike;
 
 public class SampleData {
     private int sessionID;
-    private String sesssionDate;
+    private String sessionDate;
     private int leftHandStrike;
     private int rightHandStrike;
     private int leftLegStrike;
@@ -16,12 +16,12 @@ public class SampleData {
         this.sessionID = sessionID;
     }
 
-    public String getSesssionDate() {
-        return sesssionDate;
+    public String getSessionDate() {
+        return sessionDate;
     }
 
-    public void setSesssionDate(String sesssionDate) {
-        this.sesssionDate = sesssionDate;
+    public void setSessionDate(String sessionDate) {
+        this.sessionDate = sessionDate;
     }
 
     public int getLeftHandStrike() {

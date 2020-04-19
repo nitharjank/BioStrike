@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:fontFamily="@font/convergence"
-            android:text="Left Hand Strike Data (session ID vs. strike data)"
+            android:text=" Strike Force (N) Over Time"
             android:textColor="@color/white"
             android:textSize="15dp" />
 

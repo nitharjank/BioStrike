@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.jjoe64.graphview.DefaultLabelFormatter;
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
@@ -48,7 +49,19 @@ public class PastActivity extends AppCompatActivity {
         final GraphView graph = (GraphView) findViewById(R.id.graph);
         series = new LineGraphSeries<DataPoint>();
         for (int i = 0; i < dataSamples.size(); i++) {
-            x = dataSamples.get(i).getSessionID();
+            String date = dataSamples.get(i).getSessionDate();
+            int k = 0;
+            while (!date.substring(k, k+1).equals("/")) {
+                k++;
+            }
+            int month = Integer.parseInt(date.substring(0,k));
+            k++;
+            int j = k;
+            while (!date.substring(j, j+1).equals("/")) {
+                j++;
+            }
+            int day = Integer.parseInt(date.substring(k, j));
+            x = (31 * month) - 31 + day;
             if (selectedValue.equals("Left Leg")) {
                 y = dataSamples.get(i).getLeftLegStrike();
             } else if (selectedValue.equals("Right Leg")) {
@@ -61,6 +74,30 @@ public class PastActivity extends AppCompatActivity {
             series.appendData(new DataPoint(x, y), true, dataSamples.size());
         }
         graph.addSeries(series);
+
+        graph.getGridLabelRenderer().setLabelFormatter(new DefaultLabelFormatter()
+        {
+            @Override
+            public String formatLabel(double value, boolean isValueX) {
+                if (isValueX) {
+                    if (value < 32) {
+                        if (value == 0) {
+                            value = 1.0;
+                        }
+                        return "JAN " + Integer.toString((int) value);
+                    } else if (value < 63) {
+                        return "FEB " + Integer.toString(((int)value) - 31);
+                    } else if (value < 94) {
+                        return "MAR " + Integer.toString(((int)value) - 62);
+                    } else {
+                        return super.formatLabel(value, isValueX);
+                    }
+                } else {
+                    return super.formatLabel(value, isValueX);
+                }
+            }
+        });
+
         // update graph data based on what was selected to be shown
         dataSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -71,7 +108,19 @@ public class PastActivity extends AppCompatActivity {
                 String selectedValue = dataSpinner.getSelectedItem().toString();
                 series = new LineGraphSeries<DataPoint>();
                 for (int i = 0; i < dataSamples.size(); i++) {
-                    x = dataSamples.get(i).getSessionID();
+                    String date = dataSamples.get(i).getSessionDate();
+                    int k = 0;
+                    while (!date.substring(k, k+1).equals("/")) {
+                        k++;
+                    }
+                    int month = Integer.parseInt(date.substring(0,k));
+                    k++;
+                    int j = k;
+                    while (!date.substring(j, j+1).equals("/")) {
+                        j++;
+                    }
+                    int day = Integer.parseInt(date.substring(k, j));
+                    x = (31 * month) - 31 + day;
                     if (selectedValue.equals("Left Leg")) {
                         y = dataSamples.get(i).getLeftLegStrike();
                     } else if (selectedValue.equals("Right Leg")) {
@@ -134,7 +183,7 @@ public class PastActivity extends AppCompatActivity {
                 // read data
                 SampleData sample = new SampleData();
                 sample.setSessionID(Integer.parseInt(splits[0]));
-                sample.setSesssionDate(splits[1]);
+                sample.setSessionDate(splits[1]);
                 sample.setLeftHandStrike(Integer.parseInt(splits[2]));
                 sample.setRightHandStrike(Integer.parseInt(splits[3]));
                 sample.setLeftLegStrike(Integer.parseInt(splits[4]));

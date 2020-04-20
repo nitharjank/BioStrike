@@ -17,6 +17,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CurrentActivity extends AppCompatActivity {
     TextView textView ;
+    TextView lefthand ;
+    TextView righthand ;
+    TextView leftleg ;
+    TextView rightleg ;
+    TextView left;
+    TextView right;
     Button start, pause, reset;
     Handler handler;
     int Seconds, Minutes, MilliSeconds ;
@@ -35,6 +41,22 @@ public class CurrentActivity extends AppCompatActivity {
         pause = (Button)findViewById(R.id.pausebutton);
         reset = (Button)findViewById(R.id.resetbutton);
         image = (ImageView) findViewById(R.id.imageView1);
+
+        lefthand = (TextView)findViewById(R.id.textView);
+        lefthand.setText("12 hits");
+        leftleg = (TextView)findViewById(R.id.textView4);
+        leftleg.setText("28 hits");
+        left = (TextView)findViewById(R.id.textView5);
+        left.setText("Left");
+
+        righthand = (TextView)findViewById(R.id.textView2);
+        righthand.setText("44 hits");
+        rightleg = (TextView)findViewById(R.id.textView3);
+        rightleg.setText("34 hits");
+        left = (TextView)findViewById(R.id.textView6);
+        left.setText("Right");
+
+
 
         handler = new Handler() ;
 

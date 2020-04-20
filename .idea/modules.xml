@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BioStrike.iml" filepath="$PROJECT_DIR$/BioStrike.iml" group="BioStrike" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="BioStrike/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/BioStrike-app.iml" filepath="$PROJECT_DIR$/app/BioStrike-app.iml" group="BioStrike/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/jtds-1.3.1/jtds-1.3.1.iml" filepath="$PROJECT_DIR$/jtds-1.3.1/jtds-1.3.1.iml" group="BioStrike/jtds-1.3.1" />
       <module fileurl="file://$PROJECT_DIR$/mssql-jdbc-8.2.0.jre13/mssql-jdbc-8.2.0.jre13.iml" filepath="$PROJECT_DIR$/mssql-jdbc-8.2.0.jre13/mssql-jdbc-8.2.0.jre13.iml" group="BioStrike/mssql-jdbc-8.2.0.jre13" />
     </modules>

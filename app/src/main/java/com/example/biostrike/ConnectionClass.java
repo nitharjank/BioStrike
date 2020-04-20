@@ -7,8 +7,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * This class is design to connect the application to database.
+ * This class can be call in any other classes to connect to database
+ */
 public class ConnectionClass {
-
     @SuppressLint("NewApi")
     public static Connection CONN() {
 

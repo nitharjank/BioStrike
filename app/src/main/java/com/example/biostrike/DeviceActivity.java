@@ -10,17 +10,22 @@ import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * This class is related to Device section of the application. Mostly connect to devices
+ * and display all the information related to the devices
+ */
 public class DeviceActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.device_screen);
-
+        //This adapter list all the possible connected devices
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.Device_items,
                 android.R.layout.simple_spinner_item
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
 
         Spinner device1 = findViewById(R.id.device1);
         Spinner device2 = findViewById(R.id.device2);

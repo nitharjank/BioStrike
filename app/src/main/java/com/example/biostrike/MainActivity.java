@@ -24,6 +24,11 @@ import java.util.ArrayList;
 import net.sourceforge.jtds.jdbc.*;
 import android.widget.TextView;
 
+/**
+ * This is the mainscreen for our application and this is where the user will use their login info
+ * to login to the application and we are using the database to store the information and retrieve
+ * information regarding the user
+ */
 public class MainActivity extends AppCompatActivity {
 
     Button login;
@@ -53,23 +58,28 @@ public class MainActivity extends AppCompatActivity {
         finalLogin = false;
         registerLink = (TextView)findViewById(R.id.NewUser);
 
+        //This button check if the user is entering the correct information and if so will let the
+        //user connect to the application
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 usernam = username.getText().toString();
                 passwordd = password.getText().toString();
-                CheckLogin checkLogin = new CheckLogin();// this is the Asynctask, which is used to process in background to reduce load on app process
+                // this is the Asynctask, which is used to process in background to reduce load on app process
+                CheckLogin checkLogin = new CheckLogin();
                 checkLogin.execute("");
                 String x= ""+v.getId();
                 if (finalLogin){
                     Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
                     startActivity(intent);
                 }
-//                Intent intent = new Intent(v.getContext(),HomescreenActivity.class);
-//                startActivity(intent);
             }
         });
+        /*
+        IF the user don't have any login information, then the user can click on the signup button
+        to register for the appication.
+         */
         registerLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +89,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /*
+    this is the Asynctask, which is used to process in background to reduce load on app process
+    this class will if the info entered by the use is correct
+     */
     public class CheckLogin extends AsyncTask<String, String, String>{
         String z = "";
         Boolean isSuccess = false;
@@ -90,6 +104,11 @@ public class MainActivity extends AppCompatActivity {
             progressBar.setVisibility(View.VISIBLE);
         }
 
+        /**
+         * This is do the post process of the login application, if the user entered the correct
+         * then the user will be navigated to home screen
+         * @param r String return whether or not the information is correct
+         */
         @Override
         protected void onPostExecute(String r)
         {
@@ -102,6 +121,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         }
+
+        /**
+         * This method will call the ConnectionClass and check if the user entered the correct
+         * information.
+         * @param params will take both username and password
+         * @return a message for the user
+         */
         @Override
         protected String doInBackground(String... params)
         {

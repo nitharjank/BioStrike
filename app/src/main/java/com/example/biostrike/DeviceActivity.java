@@ -26,12 +26,13 @@ public class DeviceActivity extends AppCompatActivity implements AdapterView.OnI
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-
+        //This let the user open the drop down menu
         Spinner device1 = findViewById(R.id.device1);
         Spinner device2 = findViewById(R.id.device2);
         Spinner device3 = findViewById(R.id.device3);
         Spinner device4 = findViewById(R.id.device4);
 
+        //This connect the spinners to adapter
         device1.setAdapter(adapter);
         device1.setOnItemSelectedListener(this);
         device2.setAdapter(adapter);
@@ -42,7 +43,7 @@ public class DeviceActivity extends AppCompatActivity implements AdapterView.OnI
         device4.setOnItemSelectedListener(this);
 
 
-
+        //When pressed, will navigate to home
         Button homeButton = (Button) findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +53,7 @@ public class DeviceActivity extends AppCompatActivity implements AdapterView.OnI
             }
         });
 
-
+        //When pressed, will navigate to current screen
         Button currButton = (Button) findViewById(R.id.currentButton);
         currButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +63,7 @@ public class DeviceActivity extends AppCompatActivity implements AdapterView.OnI
             }
         });
 
+        //When pressed, will navigate to past screen
         Button pastButton = (Button) findViewById(R.id.pastButton);
         pastButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +72,8 @@ public class DeviceActivity extends AppCompatActivity implements AdapterView.OnI
                 startActivity(intent);
             }
         });
+
+        //When pressed, will navigate to goal screen
         Button goalsButton = (Button) findViewById(R.id.goalsButton);
         goalsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +83,7 @@ public class DeviceActivity extends AppCompatActivity implements AdapterView.OnI
             }
         });
 
-
+        //When pressed, will apply all the setting changed in the goal screen
         Button applyButton = (Button) findViewById(R.id.applyButton);
         applyButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,9 +93,8 @@ public class DeviceActivity extends AppCompatActivity implements AdapterView.OnI
             }
         });
 
-
-
     }
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

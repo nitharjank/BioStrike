@@ -20,6 +20,10 @@ import java.sql.SQLException;
 
 import static android.text.TextUtils.isEmpty;
 
+/**
+ * This activity is for the register screen of the application and the user can use this create
+ * an account for the application
+ */
 public class RegistrationActivity extends AppCompatActivity {
     TextView loginLink;
     LinearLayout lvparent;
@@ -45,6 +49,9 @@ public class RegistrationActivity extends AppCompatActivity {
         passWord = findViewById(R.id.password);
         progressBar = findViewById(R.id.progressBar2);
 
+        /*
+        Will check if the user entered necessary information for the application
+         */
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +74,11 @@ public class RegistrationActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * This will check if the value entered by the user is empty
+     * @param strValue value to be check if its null
+     * @return true if its empty and false if its not empty
+     */
     public Boolean isEmpty(String strValue) {
         if (strValue == null || strValue.trim().equals(("")))
             return true;
@@ -74,6 +86,10 @@ public class RegistrationActivity extends AppCompatActivity {
             return false;
     }
 
+    /**
+     *  this is the Asynctask, which is used to process in background to reduce load on app process
+     *  This class will update all the information entered by the user and store it in the database
+     */
     public class registerUser extends AsyncTask<String, Void, String>{
         String _fName, _lName, _uName, _email, _mPhone, _passWord;
 
@@ -119,6 +135,12 @@ public class RegistrationActivity extends AppCompatActivity {
             }
         }
 
+        /**
+         * This method is to execute the post command for the application.
+         * If the user followed all the guide and provided the correct information,
+         * it will tell the user "Registered successfully"
+         * @param result "Registered successfully" if the user did everything as the app asked
+         */
         @Override
         protected void onPostExecute(String result) {
             Toast.makeText(RegistrationActivity.this, result, Toast.LENGTH_SHORT).show();

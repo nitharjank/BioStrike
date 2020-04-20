@@ -20,6 +20,11 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * This goal activity will call the ConnectionClass to get the information from the database
+ * and will display them on the screen and when a user add a goal, it will update to database
+ * with the username and the goal.
+ */
 public class GoalsActivity extends AppCompatActivity {
 
 
@@ -34,6 +39,7 @@ public class GoalsActivity extends AppCompatActivity {
         setContentView(R.layout.goals_screen);
         temp = new ArrayList<>();
 
+        //When pressed, will navigate to home
         Button homeButton = (Button) findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +77,7 @@ public class GoalsActivity extends AppCompatActivity {
         temp.add("Have to talk to my coach tomorrow");
         Log.d("Array", temp.size()+"");
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_multiple_choice, temp);
-
+        //When We are calling the database and getting the goals that are for the specific username
         View.OnClickListener addList = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,7 +109,7 @@ public class GoalsActivity extends AppCompatActivity {
             }
         };
 
-
+        //This function will display all the goals in array to list view in the application
         list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {

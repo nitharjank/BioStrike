@@ -8,5 +8,11 @@
         <item>DEVICEID2</item>
         <item>DEVICEID3</item>
         <item>DEVICEID4</item>
+
+    <string-array name="Parts">
+        <item>Left Leg</item>
+        <item>Right Leg</item>
+        <item>Left Hand</item>
+        <item>Right Hand</item>
     </string-array>
 </resources>

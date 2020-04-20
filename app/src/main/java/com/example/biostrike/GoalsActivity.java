@@ -29,28 +29,10 @@ public class GoalsActivity extends AppCompatActivity {
     ListView list;
     Button addButton;
 
-//    @Override
-//    protected void onStart() {
-//
-//        super.onStart();
-//        ConnectionClass con = new ConnectionClass();
-//        Connection connect = ConnectionClass.CONN();
-//        try {
-//            Statement stmt = connect.createStatement();
-//            ResultSet rs;
-//            rs = stmt.executeQuery("SELECT goal FROM BioStrike_Table WHERE userName = " + MainActivity.user_name);
-//            Log.d("Name", "I am here");
-//            while (rs.next()) {
-//                temp.add(rs.getString("goal"));
-//            }
-//        } catch (Exception e) {
-//            System.out.println(e.getMessage());
-//        }
-//    }
-
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.goals_screen);
+        temp = new ArrayList<>();
 
         Button homeButton = (Button) findViewById(R.id.homeButton);
         homeButton.setOnClickListener(new View.OnClickListener() {
@@ -61,11 +43,10 @@ public class GoalsActivity extends AppCompatActivity {
             }
         });
 
-
         textView = (TextView) findViewById(R.id.goalsText);
         addButton = (Button) findViewById(R.id.addButton);
         list = (ListView) findViewById(R.id.menu);
-        temp = new ArrayList<>();
+
 //        new Thread(new Runnable() {
 //            @Override
 //            public void run() {
@@ -88,6 +69,7 @@ public class GoalsActivity extends AppCompatActivity {
         temp.add("Need to improve the force of punch");
         temp.add("Need to improve speed of the punch");
         temp.add("Have to talk to my coach tomorrow");
+        Log.d("Array", temp.size()+"");
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_multiple_choice, temp);
 
         View.OnClickListener addList = new View.OnClickListener() {

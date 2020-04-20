@@ -41,14 +41,14 @@ public class CurrentActivity extends AppCompatActivity {
         pause = (Button)findViewById(R.id.pausebutton);
         reset = (Button)findViewById(R.id.resetbutton);
         image = (ImageView) findViewById(R.id.imageView1);
-
+        // textView for left limbs
         lefthand = (TextView)findViewById(R.id.textView);
         lefthand.setText("12 hits");
         leftleg = (TextView)findViewById(R.id.textView4);
         leftleg.setText("28 hits");
         left = (TextView)findViewById(R.id.textView5);
         left.setText("Left");
-
+        // text view for right limbs
         righthand = (TextView)findViewById(R.id.textView2);
         righthand.setText("44 hits");
         rightleg = (TextView)findViewById(R.id.textView3);
@@ -65,6 +65,7 @@ public class CurrentActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1,
                 ListElementsArrayList
         );
+        // starts the timer
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,6 +77,7 @@ public class CurrentActivity extends AppCompatActivity {
 
             }
         });
+        // stops timer
         pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +90,7 @@ public class CurrentActivity extends AppCompatActivity {
 
             }
         });
-
+        // stopwatch is reset when user presses reset button
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -108,7 +110,9 @@ public class CurrentActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
         });
+
         Button homeButton = (Button) findViewById(R.id.homeButton);
+        // allows user to go back to homescreen
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,6 +121,7 @@ public class CurrentActivity extends AppCompatActivity {
             }
         });
         Button pastButton = (Button) findViewById(R.id.pastButton);
+        // allows user to go back to  pastActivity
         pastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,6 +130,7 @@ public class CurrentActivity extends AppCompatActivity {
             }
         });
         Button goalsButton = (Button) findViewById(R.id.goalsButton);
+        // allows user to go back to goals screen
         goalsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,7 +138,7 @@ public class CurrentActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        // allows user to access device screen
         Button deviceButton = (Button) findViewById(R.id.deviceButton);
         deviceButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,7 +149,7 @@ public class CurrentActivity extends AppCompatActivity {
         });
 
     }
-
+    // where timer values are updated
     public Runnable runnable = new Runnable() {
 
         public void run() {

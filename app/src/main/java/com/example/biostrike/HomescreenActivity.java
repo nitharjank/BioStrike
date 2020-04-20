@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,7 @@ import static com.example.biostrike.MainActivity.lastname;
 public class HomescreenActivity extends AppCompatActivity {
     TextView name, weight, weight_class, next_op, fight_date;
     TextView right_hand, left_hand, right_leg, left_leg;
+    ImageView image;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +37,8 @@ public class HomescreenActivity extends AppCompatActivity {
         left_hand = findViewById(R.id.connected2);
         right_leg = findViewById(R.id.connected3);
         left_leg = findViewById(R.id.connected4);
-
+        image = findViewById(R.id.imageView);
+        image.setImageResource(R.drawable.whitemale);
 
         String lastname = MainActivity.lastname;
         String firstname = MainActivity.firstname;

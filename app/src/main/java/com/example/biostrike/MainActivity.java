@@ -34,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
     Boolean finalLogin;
 
     TextView registerLink;
+    public  static String user_name = "";
+    public static String firstname = "";
+    public static String lastname = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,6 +125,9 @@ public class MainActivity extends AppCompatActivity {
                         if(rs.next())
                         {
                             z = "Login successful";
+                            user_name = usernam.toString();
+                            lastname =  rs.getString("lastName");
+                            firstname =  rs.getString("firstName");
                             isSuccess=true;
                             finalLogin = true;
                             //con.close();

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
@@ -46,9 +48,8 @@
             android:layout_marginTop="5dp"
 
             />
-
-
     </RelativeLayout>
+
 
     <!-- This layout is for the tabs -->
     <RelativeLayout
@@ -112,14 +113,307 @@
     </RelativeLayout>
 
     <!-- User Profile-->
+    <LinearLayout
+        android:id="@+id/UserInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="475dp"
+        android:gravity="center_horizontal"
+        >
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            tools:srcCompat="@drawable/maleicon"
+            android:contentDescription="TODO" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:fontFamily="@font/convergence"
+            />
+        <!-- Information section -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="left"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+                >
+                <TextView
+                    android:id="@+id/weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Weight:"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/convergence"
+                    />
+                <TextView
+                    android:id="@+id/weightc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Weight Class:"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/convergence"
+                    />
+                <TextView
+                    android:id="@+id/NextOpp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Next Opponent:"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/convergence"
+                    />
+                <TextView
+                    android:id="@+id/Date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date of Fight:"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/convergence"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                >
+                <TextView
+                    android:id="@+id/weight_fill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/convergence"
+                    />
+                <TextView
+                    android:id="@+id/weightc_fill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/convergence"
+                    />
+                <TextView
+                    android:id="@+id/NextOpp_fill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="N/A"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/convergence"
+                    />
+                <TextView
+                    android:id="@+id/Date_fill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="N/A"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:fontFamily="@font/convergence"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    <!-- Device Info -->
+    <LinearLayout
+        android:id="@+id/deviceSelection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="300dp"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/DeviceTab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Devices"
+                android:textSize="25dp"
+                android:fontFamily="@font/convergence"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                />
+        </LinearLayout>
+        <!--Right Hand -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            >
+            <TextView
+                android:id="@+id/right_hand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Right Hand"
+                android:textSize="20dp"
+                android:fontFamily="@font/convergence"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/connected"
+                android:layout_marginLeft="10dp"
+                >
+            </ImageView>
+            <TextView
+                android:id="@+id/connected1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Connected"
+                android:textSize="20dp"
+                android:fontFamily="@font/convergence"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+        <!--Left Hand -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/left_hand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Left Hand"
+                android:textSize="20dp"
+                android:fontFamily="@font/convergence"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/connected"
+                android:layout_marginLeft="25dp"
+                >
+            </ImageView>
+            <TextView
+                android:id="@+id/connected2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Connected"
+                android:textSize="20dp"
+                android:fontFamily="@font/convergence"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+        <!--Right Leg -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/right_leg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Right Leg"
+                android:textSize="20dp"
+                android:fontFamily="@font/convergence"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/connected"
+                android:layout_marginLeft="29dp"
+                >
+            </ImageView>
+            <TextView
+                android:id="@+id/connected3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Connected"
+                android:textSize="20dp"
+                android:fontFamily="@font/convergence"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+
+
+        <!--Left Leg -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/left_leg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Left Leg"
+                android:textSize="20dp"
+                android:fontFamily="@font/convergence"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/connected"
+                android:layout_marginLeft="44dp"
+                >
+            </ImageView>
+            <TextView
+                android:id="@+id/connected4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Connected"
+                android:textSize="20dp"
+                android:fontFamily="@font/convergence"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
 
     <!-- For hamburger button will implement later-->
-    <RelativeLayout
-        android:layout_width="280dp"
-        android:layout_height="match_parent"
-        android:id="@+id/drawerPane"
-        android:layout_gravity="start">
-
-
-    </RelativeLayout>
 </androidx.drawerlayout.widget.DrawerLayout>
